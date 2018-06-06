@@ -12,6 +12,7 @@ class SearchesController < ApplicationController
       req.params['query'] = 'coffee shop'
     end
     body_hash = JSON.parse(@resp.body)
+    if @resp.success?
     @venues = body_hash["response"]["venues"]
     render 'search'
   end
