@@ -14,6 +14,7 @@ class SearchesController < ApplicationController
     body_hash = JSON.parse(@resp.body)
     if @resp.success?
     @venues = body_hash["response"]["venues"]
+    
     render 'search'
   end
 end
